@@ -13,13 +13,23 @@
 		}
 	},
 	"updateContentCommand": "npm install",
+	"postCreateCommand" : "workbench.action.splitEditor",
 	"postAttachCommand": "npm run dev",
 	"waitFor": "updateContentCommand",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-vscode.live-server"
-			]
+			],
+			"settings":
+			{
+    				"files.exclude": {
+        			"package-lock.json": true,
+        			".gitignore": true,
+        			"node_modules/": true
+    			},
+    			"editor.minimap.enabled": false
+			}
 		}
 	}
 }
