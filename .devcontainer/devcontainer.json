@@ -28,8 +28,7 @@
             "extensions": [
                 "jkearins.action-buttons-ext@0.1.1",
                 "esbenp.prettier-vscode",
-                "dbaeumer.vscode-eslint",
-				"ms-vscode.live-server"
+                "dbaeumer.vscode-eslint"
             ],
             "settings": {
                 "files.exclude": {
