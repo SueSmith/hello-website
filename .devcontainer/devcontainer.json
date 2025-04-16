@@ -55,7 +55,7 @@
                         {
                             "name": "🚀 Deploy",
                             "singleInstance": true,
-                            "command": "npm run build && if [ -d ./edge ]; then npx --yes @fastly/compute-js-static-publish@latest --root-dir=./dist --output=./edge; fi && cd ./edge && npm install && npx --yes @fastly/cli compute publish -name=$CODESPACE_NAME --accept-defaults --auto-yes || echo 'Grab an API key and add it your repo before deploying!'"
+                            "command": "npm run build && npx --yes @fastly/compute-js-static-publish@latest --root-dir=./dist --output=./edge ; cd ./edge && npm install && npx --yes @fastly/cli compute publish -name=$CODESPACE_NAME --accept-defaults --auto-yes || echo 'Grab an API key and add it your repo before deploying!'"
                         },
                         {
                             "name": "🔎 Split",
