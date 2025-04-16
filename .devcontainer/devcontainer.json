@@ -28,7 +28,8 @@
             "extensions": [
                 "jkearins.action-buttons-ext@0.1.1",
                 "esbenp.prettier-vscode",
-                "dbaeumer.vscode-eslint"
+                "dbaeumer.vscode-eslint",
+                "gabrielgrinberg.auto-run-command"
             ],
             "settings": {
                 "files.exclude": {
@@ -65,7 +66,14 @@
                         }
                     ],
                     "defaultColor": "none"
+                },
+                "auto-run-command.rules": [
+                {
+                    "condition": "isRunningInContainer",
+                    "command": "workbench.action.moveEditorToNextGroup",
+                    "message": "Splitting"
                 }
+    ]
             }
         }
     }
