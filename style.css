@@ -20,7 +20,7 @@ to this section's matching END comment to see page-specific styles.
   --bg-alt: #ba160a;
   --text-color: white;
   --header-color: #f4eeec;
-  --wrapper-height: 97vh;
+  --wrapper-height: 98vh;
 }
 
 /* Basic page style resets */
@@ -67,4 +67,7 @@ body {
 h1 {
   color: var(--header-color);
   margin-top:0.5rem;
+}
+.remix {
+  text-align:center;
 }
