@@ -1,26 +1,18 @@
-/******************************************************************************
-START Glitch hello-app default styles
-
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
-
-
-/* 
-  The style rules specify elements by type and by attributes such as class and ID
-  Each section indicates an element or elements, then lists the style properties to apply
-  See if you can cross-reference the rules in this file with the elements in index.html
-*/
-
-/* Our default values set as CSS variables */
+/* A set of default styles */
 :root {
-  --bg-color: #881007;
-  --bg-alt: #ba160a;
-  --text-color: white;
-  --header-color: #f4eeec;
-  --wrapper-height: 98vh;
+  /* Generic sizing for the page */
+  --wrapper-height: 100vh;
+
+  /* Fonts for different elements */
+  --font-family: sans-serif;
+  --font-family-list: monospace;
+
+  /* Colors you'll see cascade through the elements */
+  --color-bg: #99ddff; /* Used for the page body background */
+  --color-bg-alt: #33b1ff; /* Used for social icons on hover */
+  --color-text-main: #004099; /* List text ann social icons on hover */
+  --color-primary: #006aff; /* Headers and borders */
+  --color-highlight: #e7f7fe; /* Highlights */
 }
 
 /* Basic page style resets */
@@ -31,18 +23,21 @@ to this section's matching END comment to see page-specific styles.
   display: none !important;
 }
 
+/* Page structure */
 body {
-  font-family: sans-serif;
-  background-image: linear-gradient(var(--bg-alt), var(--bg-color));
-  color: var(--text-color);
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  text-align: center;
+  margin: 0;
+  font-size:large;
 }
-
 /* Page structure */
 .wrapper {
   min-height: var(--wrapper-height);
   display: grid;
   place-items: center;
-  margin: 0 1rem;
+  margin: 0;
+  padding:1rem 2rem;
 }
 .content {
   display: flex;
@@ -53,7 +48,7 @@ body {
 
 .illustration {
   max-width:30%;
-  margin:1rem;
+  margin:1rem 0 2rem 0;
   animation: 1s ease-out 0s 1 slideIn;
 }
 @keyframes slideIn {
@@ -64,10 +59,59 @@ body {
     transform: translateX(0);
   }
 }
-h1 {
-  color: var(--header-color);
-  margin-top:0.5rem;
+
+/* Typography */
+p {
+  margin: 1rem;
 }
-.remix {
-  text-align:center;
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-text-main);
+}
+h1 {
+  display: inline-flex;
+  color: var(--color-primary);
+  justify-content: center;
+}
+/* Link styles */
+a:link,
+a:visited {
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  transition: background 0.2s linear;
+  font-weight: bold;
+}
+a:hover,
+a:active,
+a:focus {
+  background: var(--color-primary);
+  color:var(--color-highlight);
+}
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto 0;
+  padding: 1.5rem 0 0.5rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-end;
+}
+a.remix {
+  background: var(--color-bg-alt);
+  color:var(--color-highlight);
+  border: 2px solid var(--color-highlight);
+  border-radius: 5px;
+  padding:0.5rem;
+  font-weight:bold;
+}
+a.remix:hover {
+  background: var(--color-primary);
+  color:var(--color-highlight);
 }
