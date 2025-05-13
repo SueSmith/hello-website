@@ -10,7 +10,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ; then
     else 
         if [ ! -d './_deploy/_app' ]; then
             npm run build
-            npx --yes @fastly/compute-js-static-publish@latest --root-dir=./_deploy/_site --output=./_deploy/_app --static-dir=./public --not-found-page=./public/404.html --kv-store-name=website-content
+            npx --yes @fastly/compute-js-static-publish@latest --root-dir=./_deploy/_site --output=./_deploy/_app --not-found-page=./_deploy/_site/404.html --kv-store-name=website-content
         fi
         cd ./_deploy/_app
         name=$(grep '^service_id' fastly.toml | cut -d= -f2-)
