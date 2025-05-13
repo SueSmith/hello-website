@@ -1,6 +1,6 @@
 {
-  "name": "vite-starter",
-  "version": "0.0.0",
+  "name": "fastly-website-starter",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
