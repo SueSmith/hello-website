@@ -8,11 +8,11 @@ if [ "$answer" != "${answer#[Yy]}" ] ; then
     if [ ! $FASTLY_API_TOKEN ]; then 
         echo '⚠️ Grab an API key and add it your repo before deploying! Check out the README for steps. 📖' 
     else 
-        if [ ! -d './_app' ]; then
+        if [ ! -d './_deploy/_app' ]; then
             npm run build
-            npx --yes @fastly/compute-js-static-publish@latest --root-dir=./_site --output=./_app --kv-store-name=website-content
+            npx --yes @fastly/compute-js-static-publish@latest --root-dir=./_deploy/_site --output=./_deploy/_app --static-dir=./public --not-found-page=./public/404.html --kv-store-name=website-content
         fi
-        cd ./_app
+        cd ./_deploy/_app
         name=$(grep '^service_id' fastly.toml | cut -d= -f2-)
         size=${#name}
         # do we have a service id (meaning we've deployed)
