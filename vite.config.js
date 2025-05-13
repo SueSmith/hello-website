@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig(async ({ command, mode }) => {
   return {
     build: {
-      outDir: "_site",
+      outDir: "_deploy/_site",
     }
   };
 });
