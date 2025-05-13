@@ -9,6 +9,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ; then
         echo '⚠️ Grab an API key and add it your repo before deploying! Check out the README for steps. 📖' 
     else 
         if [ ! -d './_app' ]; then
+            npm run build
             npx --yes @fastly/compute-js-static-publish@latest --root-dir=./_site --output=./_app --kv-store-name=website-content
         fi
         cd ./_app
